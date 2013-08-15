@@ -21,20 +21,17 @@ package
 
       var ns = new NetStream(nc);
       ns.client = customClient;
-      var vid = new Video(1280, 720);
-      vid.name = "vid";
 
-      vid.scaleX = vid.scaleY = Math.min(stage.stageWidth/1280,
-                                         stage.stageWidth/720);
-
-      this.addChild(vid);
+      var vid:Video = new StageVideoProxy(1280, 720);
       vid.attachNetStream(ns);
+      this.addChild(vid);
+
       ns.play("http://10.0.1.3:8081/stream.flv");
 
-      var st:* = new SoundTransform();
-      st.volume=0.5;
-
-      ns.soundTransform=st;
+      // var st:* = new SoundTransform();
+      // st.volume=0.5;
+      //  
+      // ns.soundTransform=st;
     }
 
     public function metaDataHandler(infoObject:Object):void {

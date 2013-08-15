@@ -12,7 +12,5 @@
     <renderMode>direct</renderMode>
    	<autoOrients>false</autoOrients>
     <aspectRatio>landscape</aspectRatio> 
-    <fullScreen>false</fullScreen>
-    <visible>true</visible>
   </initialWindow>
 </application>
